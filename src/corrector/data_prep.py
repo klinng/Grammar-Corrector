@@ -23,6 +23,21 @@ def make_pairs(split):
                 pairs.append((PREFIX + bad, good))
     return pairs
 
+def make_synthetic_pairs(split, per_sentence=3, seed=0):
+    """Break clean JFLEG corrections on purpose to make extra pairs."""
+    import random
+
+    from corrector.error_gen import corrupt
+
+    rng = random.Random(seed)
+    clean = {c.strip() for row in split for c in row["corrections"] if c.strip()}
+    pairs = []
+    for good in sorted(clean):
+        for _ in range(per_sentence):
+            bad, good_text = corrupt(good, rng)
+            if bad != good_text:
+                pairs.append((PREFIX + bad, good_text))
+    return pairs
 
 if __name__ == "__main__":
     data = load_jfleg()
