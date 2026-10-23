@@ -1,0 +1,7 @@
+torch
+transformers
+datasets
+sentencepiece
+evaluate
+pytest
+ruff
