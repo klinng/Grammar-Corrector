@@ -5,3 +5,4 @@ sentencepiece
 evaluate
 pytest
 ruff
+accelerate
