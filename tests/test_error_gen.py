@@ -1,10 +1,10 @@
 import random
 
-from corrector.error_gen import corrupt, drop_article, add_typo
+from corrector.error_gen import add_typo, corrupt, drop_article
 
 
 def test_corrupt_keeps_good_sentence():
-    bad, good = corrupt("The cat sat on the mat.", random.Random(0))
+    _bad, good = corrupt("The cat sat on the mat.", random.Random(0))
     assert good == "The cat sat on the mat."
 
 
