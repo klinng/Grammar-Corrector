@@ -46,8 +46,50 @@ def confuse_word(sentence, rng):
     words[i] = rng.choice(CONFUSIONS[words[i].lower()])
     return " ".join(words)
 
+def wrong_a_an(sentence, rng):
+    """Swap a/an so it no longer matches the next word."""
+    words = sentence.split()
+    candidates = [i for i, w in enumerate(words) if w.lower() in {"a", "an"}]
+    if not candidates:
+        return sentence
+    i = rng.choice(candidates)
+    words[i] = "an" if words[i].lower() == "a" else "a"
+    return " ".join(words)
 
-ERROR_FUNCS = [add_typo, drop_article, confuse_word]
+
+def drop_letter(sentence, rng):
+    """Remove one letter from a random word (like tomorow)."""
+    words = sentence.split()
+    candidates = [i for i, w in enumerate(words) if len(w) >= 5 and w.isalpha()]
+    if not candidates:
+        return sentence
+    i = rng.choice(candidates)
+    w = words[i]
+    j = rng.randrange(1, len(w) - 1)
+    words[i] = w[:j] + w[j + 1 :]
+    return " ".join(words)
+
+
+def double_letter(sentence, rng):
+    """Repeat one letter in a random word (like developped)."""
+    words = sentence.split()
+    candidates = [i for i, w in enumerate(words) if len(w) >= 4 and w.isalpha()]
+    if not candidates:
+        return sentence
+    i = rng.choice(candidates)
+    w = words[i]
+    j = rng.randrange(1, len(w) - 1)
+    words[i] = w[: j + 1] + w[j] + w[j + 1 :]
+    return " ".join(words)
+
+ERROR_FUNCS = [
+    add_typo,
+    drop_article,
+    confuse_word,
+    wrong_a_an,
+    drop_letter,
+    double_letter,
+]
 
 
 def corrupt(sentence, rng=None):

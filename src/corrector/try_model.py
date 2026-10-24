@@ -9,6 +9,7 @@ samples = [
     "She go to school yesterday.",
     "I has a apple.",
     "Their going to the park tomorow.",
+    "i walkad hame at night sudenly soemthign strenge happended",
 ]
 for s in samples:
     inputs = tokenizer("fix grammar: " + s, return_tensors="pt")
