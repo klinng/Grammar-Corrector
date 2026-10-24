@@ -223,3 +223,6 @@ models/
 data/raw/
 data/processed/
 data/synthetic/
+
+input.txt
+output.txt
