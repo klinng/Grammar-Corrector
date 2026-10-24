@@ -3,7 +3,7 @@ from datasets import load_dataset
 from transformers import T5ForConditionalGeneration, T5Tokenizer
 
 MODEL_DIR = "models/t5-small-gec"
-N = 200  # number of test sentences; raise to 748 for the full test set
+N = 748  # number of test sentences; raise to 748 for the full test set
 
 
 def correct_batch(sentences, tokenizer, model, batch_size=16):
