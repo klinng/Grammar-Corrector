@@ -1,4 +1,3 @@
-import torch
 
 _lm = None
 
@@ -16,6 +15,7 @@ def _get_lm():
 
 
 def sentence_score(text):
+    import torch
     """Higher = the sentence sounds more natural (log-probability)."""
     tok, model = _get_lm()
     ids = tok(tok.bos_token + text, return_tensors="pt").input_ids
