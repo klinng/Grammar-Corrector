@@ -9,16 +9,18 @@ from transformers import (
     T5Tokenizer,
 )
 
-from corrector.data_prep import load_jfleg, make_pairs
+from corrector.data_prep import load_jfleg, make_pairs, make_synthetic_pairs
 
 MODEL_NAME = "t5-small"
 OUTPUT_DIR = "models/t5-small-gec"
-MAX_EXAMPLES = 1000
+MAX_EXAMPLES = 4000
 
 
 def build_dataset(tokenizer):
     data = load_jfleg()
-    pairs = make_pairs(data["validation"])
+    real = make_pairs(data["validation"])
+    synthetic = make_synthetic_pairs(data["validation"])
+    pairs = real + synthetic
     random.Random(0).shuffle(pairs)
     pairs = pairs[:MAX_EXAMPLES]
 
