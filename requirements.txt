@@ -8,3 +8,4 @@ ruff
 accelerate
 nltk
 pyspellchecker
+streamlit
