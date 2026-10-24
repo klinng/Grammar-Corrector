@@ -6,3 +6,4 @@ evaluate
 pytest
 ruff
 accelerate
+nltk
