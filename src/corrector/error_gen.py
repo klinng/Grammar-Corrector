@@ -82,6 +82,34 @@ def double_letter(sentence, rng):
     words[i] = w[: j + 1] + w[j] + w[j + 1 :]
     return " ".join(words)
 
+def lowercase_start(sentence, rng):
+    """Make the first letter lowercase (like: i went home)."""
+    if not sentence or not sentence[0].isupper():
+        return sentence
+    return sentence[0].lower() + sentence[1:]
+
+
+def drop_apostrophe(sentence, rng):
+    """Remove an apostrophe (like: dont, hows)."""
+    candidates = [i for i, ch in enumerate(sentence) if ch == "'"]
+    if not candidates:
+        return sentence
+    i = rng.choice(candidates)
+    return sentence[:i] + sentence[i + 1 :]
+
+
+def swap_neighbours(sentence, rng):
+    """Swap two neighbouring letters in a short word (like: wnet, rlife)."""
+    words = sentence.split()
+    candidates = [i for i, w in enumerate(words) if len(w) >= 3 and w.isalpha()]
+    if not candidates:
+        return sentence
+    i = rng.choice(candidates)
+    w = words[i]
+    j = rng.randrange(0, len(w) - 1)
+    words[i] = w[:j] + w[j + 1] + w[j] + w[j + 2 :]
+    return " ".join(words)
+
 ERROR_FUNCS = [
     add_typo,
     drop_article,
@@ -89,6 +117,9 @@ ERROR_FUNCS = [
     wrong_a_an,
     drop_letter,
     double_letter,
+    lowercase_start,
+    drop_apostrophe,
+    swap_neighbours,
 ]
 
 

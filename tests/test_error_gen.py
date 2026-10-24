@@ -1,6 +1,14 @@
 import random
 
-from corrector.error_gen import add_typo, corrupt, drop_article, drop_letter, wrong_a_an
+from corrector.error_gen import (
+    add_typo,
+    corrupt,
+    drop_apostrophe,
+    drop_article,
+    drop_letter,
+    lowercase_start,
+    wrong_a_an,
+)
 
 
 def test_corrupt_keeps_good_sentence():
@@ -29,3 +37,11 @@ def test_drop_letter_shortens_word():
     s = "tomorrow"
     out = drop_letter(s, random.Random(0))
     assert len(out) == len(s) - 1
+
+
+def test_lowercase_start():
+    assert lowercase_start("I went home.", random.Random(0)) == "i went home."
+
+
+def test_drop_apostrophe():
+    assert drop_apostrophe("Don't go.", random.Random(0)) == "Dont go."
