@@ -1,7 +1,7 @@
 import re
 
 from corrector.safety import safe_correct
-from corrector.spell import fix_spelling
+from corrector.spell import fix_with_context
 
 MODEL_DIR = "models/t5-small-gec"
 
@@ -33,10 +33,10 @@ def correct_sentence(sentence, tokenizer, model):
     return tokenizer.decode(out[0], skip_special_tokens=True)
 
 
-def correct_text(text, tokenizer, model):
+def correct_text(text, tokenizer, model, choices=None):
     results = []
     for sentence in split_sentences(text):
-        spelled = fix_spelling(sentence)
+        spelled, _unsure = fix_with_context(sentence)
         corrected = correct_sentence(spelled, tokenizer, model)
         results.append(safe_correct(spelled, corrected))
     return " ".join(results)

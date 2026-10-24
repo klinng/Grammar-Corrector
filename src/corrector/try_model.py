@@ -10,6 +10,7 @@ samples = [
     "I has a apple.",
     "Their going to the park tomorow.",
     "i walkad hame at night sudenly soemthign strenge happended",
+    "Because they were very hungry, they decided to cooked a massive dinner on the sidewalk.",
 ]
 for s in samples:
     inputs = tokenizer("fix grammar: " + s, return_tensors="pt")
