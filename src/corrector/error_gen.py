@@ -110,6 +110,62 @@ def swap_neighbours(sentence, rng):
     words[i] = w[:j] + w[j + 1] + w[j] + w[j + 2 :]
     return " ".join(words)
 
+def wrong_verb_form(sentence, rng):
+    """Put a verb after 'to' in the past tense (like: to cooked)."""
+    words = sentence.split()
+    candidates = [
+        i
+        for i in range(1, len(words))
+        if words[i - 1].lower() == "to" and words[i].isalpha() and len(words[i]) >= 3
+    ]
+    if not candidates:
+        return sentence
+    i = rng.choice(candidates)
+    w = words[i]
+    words[i] = w + ("d" if w.endswith("e") else "ed")
+    return " ".join(words)
+
+
+AGREEMENT = {"is": "are", "are": "is", "was": "were", "were": "was", "has": "have", "have": "has"}
+
+
+def wrong_agreement(sentence, rng):
+    """Swap is/are, was/were, has/have (like: they was)."""
+    words = sentence.split()
+    candidates = [i for i, w in enumerate(words) if w.lower() in AGREEMENT]
+    if not candidates:
+        return sentence
+    i = rng.choice(candidates)
+    words[i] = AGREEMENT[words[i].lower()]
+    return " ".join(words)
+
+
+def wrong_did(sentence, rng):
+    """Put the past tense after did (like: did went)."""
+    words = sentence.split()
+    candidates = [i for i in range(len(words) - 1) if words[i].lower() in {"did", "didn't"}]
+    if not candidates:
+        return sentence
+    i = rng.choice(candidates)
+    nxt = words[i + 1]
+    if not nxt.isalpha() or len(nxt) < 2:
+        return sentence
+    words[i + 1] = nxt + ("d" if nxt.endswith("e") else "ed")
+    return " ".join(words)
+
+
+def drop_plural(sentence, rng):
+    """Remove a final 's' from a plural-looking word (like: two cat)."""
+    words = sentence.split()
+    candidates = [
+        i for i, w in enumerate(words) if len(w) >= 4 and w.endswith("s") and w.isalpha()
+    ]
+    if not candidates:
+        return sentence
+    i = rng.choice(candidates)
+    words[i] = words[i][:-1]
+    return " ".join(words)
+
 ERROR_FUNCS = [
     add_typo,
     drop_article,
@@ -120,6 +176,10 @@ ERROR_FUNCS = [
     lowercase_start,
     drop_apostrophe,
     swap_neighbours,
+    wrong_verb_form,
+    wrong_agreement,
+    wrong_did,
+    drop_plural,
 ]
 
 
@@ -127,7 +187,7 @@ def corrupt(sentence, rng=None):
     """Apply 1 or 2 random errors. Returns (bad, good)."""
     rng = rng or random.Random()
     bad = sentence
-    for func in rng.sample(ERROR_FUNCS, k=rng.choice([1, 2])):
+    for func in rng.sample(ERROR_FUNCS, k=rng.choice([1, 2, 3 , 4])):
         bad = func(bad, rng)
     return bad, sentence
 

@@ -6,8 +6,12 @@ from corrector.error_gen import (
     drop_apostrophe,
     drop_article,
     drop_letter,
+    drop_plural,
     lowercase_start,
     wrong_a_an,
+    wrong_agreement,
+    wrong_did,
+    wrong_verb_form,
 )
 
 
@@ -45,3 +49,18 @@ def test_lowercase_start():
 
 def test_drop_apostrophe():
     assert drop_apostrophe("Don't go.", random.Random(0)) == "Dont go."
+
+def test_wrong_verb_form():
+    assert wrong_verb_form("I want to cook now.", random.Random(0)) == "I want to cooked now."
+
+
+def test_wrong_agreement():
+    assert wrong_agreement("They were here.", random.Random(0)) == "They was here."
+
+
+def test_wrong_did():
+    assert wrong_did("She did go home.", random.Random(0)) == "She did goed home."
+
+
+def test_drop_plural():
+    assert drop_plural("Cats sleep.", random.Random(0)) == "Cat sleep."
