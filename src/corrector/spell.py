@@ -2,6 +2,8 @@ import math
 import re
 from difflib import SequenceMatcher
 
+from corrector.similarity import similarity
+
 # A word, optionally with an apostrophe part (don't, it's)
 _WORD = re.compile(r"[A-Za-z]+(?:'[A-Za-z]+)?")
 _spell = None
@@ -92,14 +94,15 @@ def _candidate_words(low, spell, limit=40):
     found = {
         c
         for c in (spell.candidates(low) or set())
-        if c not in BLOCKED and SequenceMatcher(None, low, c).ratio() >= 0.7
+        if c not in BLOCKED and similarity(low, c)>= 0.7
     }
-    if not found and len(low) <= 12:
+    strong = [c for c in found if similarity(low, c) >= 0.9]
+    if not strong and len(found) < 3 and len(low) <= 12:
         wider = spell.known(spell.edit_distance_2(low))
         found |= {
             c
             for c in wider
-            if c not in BLOCKED and SequenceMatcher(None, low, c).ratio() >= 0.7
+            if c not in BLOCKED and similarity(low, c) >= 0.7
         }
     return sorted(found, key=spell.word_usage_frequency, reverse=True)[:limit]
 
@@ -133,7 +136,7 @@ def fix_with_context(text, min_gap=2.0):
             trial[i] = c.capitalize() if word[0].isupper() else c
             lm = sentence_score("".join(trial))
             prior = 0.1 * math.log(spell.word_usage_frequency(c) + 1e-9)
-            closeness = 12 * SequenceMatcher(None, low, c).ratio()
+            closeness = 12 * similarity(low, c)
             scored.append((lm + prior + closeness, c))
         scored.sort(reverse=True)
         best = scored[0][1]
@@ -143,14 +146,13 @@ def fix_with_context(text, min_gap=2.0):
             trial[i] = c.capitalize() if word[0].isupper() else c
             lm = sentence_score("".join(trial))
             prior = 0.1 * math.log(spell.word_usage_frequency(c) + 1e-9)
-            closeness = 12 * SequenceMatcher(None, low, c).ratio()
+            closeness = 12 * similarity(low, c)
             scored.append((lm + prior + closeness, c))
         scored.sort(reverse=True)
         best = scored[0][1]
-        if SequenceMatcher(None, low, best).ratio() < 0.7:
+        if similarity(low, best)< 0.7:
             continue
         if len(scored) > 1 and scored[0][0] - scored[1][0] < min_gap:
             unsure[low] = [c for _, c in scored[:3]]
-            continue
         parts[i] = best.capitalize() if word[0].isupper() else best
     return "".join(parts), unsure
