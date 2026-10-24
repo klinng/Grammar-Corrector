@@ -1,6 +1,7 @@
 import re
 
 from corrector.safety import safe_correct
+from corrector.spell import fix_spelling
 
 MODEL_DIR = "models/t5-small-gec"
 
@@ -35,8 +36,9 @@ def correct_sentence(sentence, tokenizer, model):
 def correct_text(text, tokenizer, model):
     results = []
     for sentence in split_sentences(text):
-        corrected = correct_sentence(sentence, tokenizer, model)
-        results.append(safe_correct(sentence, corrected))
+        spelled = fix_spelling(sentence)
+        corrected = correct_sentence(spelled, tokenizer, model)
+        results.append(safe_correct(spelled, corrected))
     return " ".join(results)
 
 
