@@ -12,3 +12,4 @@ where = ["src"]
 
 [tool.ruff]
 line-length = 100
+extend-exclude = ["*.ipynb"]
