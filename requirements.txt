@@ -8,5 +8,4 @@ ruff
 accelerate
 nltk
 pyspellchecker
-streamlit
 -e .
