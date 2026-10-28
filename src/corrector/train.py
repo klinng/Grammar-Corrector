@@ -16,7 +16,7 @@ from corrector.data_prep import (
     make_wiki_pairs,
 )
 
-MODEL_NAME = "t5-small"
+MODEL_NAME = "google/flan-t5-base"
 OUTPUT_DIR = "models/t5-small-gec"
 MAX_EXAMPLES = 20000
 
