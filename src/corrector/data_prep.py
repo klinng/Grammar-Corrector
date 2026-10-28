@@ -39,7 +39,7 @@ def make_synthetic_pairs(split, per_sentence=3, seed=0):
                 pairs.append((PREFIX + bad, good_text))
     return pairs
 
-def load_clean_sentences(max_sentences=3000, seed=0):
+def load_clean_sentences(max_sentences=10000, seed=0):
     """Short, clean sentences from Wikipedia (WikiText-2)."""
     import random
     import re
@@ -68,7 +68,7 @@ if __name__ == "__main__":
         print("OUT:", tgt)
         print()
 
-def make_wiki_pairs(per_sentence=1, seed=0):
+def make_wiki_pairs(per_sentence=2, seed=0):
     """Break the Wikipedia sentences on purpose to make extra pairs."""
     import random
 

@@ -10,6 +10,7 @@ from corrector.error_gen import (
     lowercase_start,
     wrong_a_an,
     wrong_agreement,
+    wrong_conjugation,
     wrong_did,
     wrong_verb_form,
 )
@@ -64,3 +65,7 @@ def test_wrong_did():
 
 def test_drop_plural():
     assert drop_plural("Cats sleep.", random.Random(0)) == "Cat sleep."
+
+def test_wrong_conjugation():
+    out = wrong_conjugation("She went home.", random.Random(0))
+    assert out in {"She goed home.", "She go home."}

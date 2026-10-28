@@ -18,7 +18,7 @@ from corrector.data_prep import (
 
 MODEL_NAME = "t5-small"
 OUTPUT_DIR = "models/t5-small-gec"
-MAX_EXAMPLES = 8000
+MAX_EXAMPLES = 20000
 
 
 def build_dataset(tokenizer):
@@ -28,6 +28,7 @@ def build_dataset(tokenizer):
     wiki = make_wiki_pairs()
     pairs = real + synthetic + wiki
     random.Random(0).shuffle(pairs)
+    print("Pairs available:", len(pairs))
     pairs = pairs[:MAX_EXAMPLES]
 
     ds = Dataset.from_dict(
