@@ -214,6 +214,73 @@ def wrong_conjugation(sentence, rng):
     return " ".join(words)
 
 
+CONFUSABLE = {
+    "then": ["than"], "than": ["then"],
+    "lose": ["loose"], "loose": ["lose"],
+    "affect": ["effect"], "effect": ["affect"],
+    "advice": ["advise"], "advise": ["advice"],
+    "accept": ["except"], "except": ["accept"],
+    "weather": ["whether"], "whether": ["weather"],
+    "quiet": ["quite"], "quite": ["quiet"],
+    "principal": ["principle"], "principle": ["principal"],
+    "breath": ["breathe"], "breathe": ["breath"],
+    "desert": ["dessert"], "dessert": ["desert"],
+    "whose": ["who's"], "who's": ["whose"],
+    "were": ["where", "we're"], "where": ["were"],
+}
+
+SOUND = {
+    "was": "woz", "because": "bekaus", "friend": "frend", "friends": "frends",
+    "would": "wood", "could": "cood", "should": "shood", "have": "hav",
+    "were": "wer", "very": "veri", "people": "peple", "said": "sed",
+    "when": "wen", "which": "wich", "what": "wot", "walking": "walken",
+    "shopping": "shoping", "normally": "normaly", "running": "runen",
+    "away": "awai", "scared": "skared", "tried": "tryed",
+    "yesterday": "yesturday", "tomorrow": "tomorow", "until": "untill",
+    "school": "skool", "going": "goin", "enough": "enuf", "through": "thru",
+    "something": "sumthing", "everything": "evrything",
+    "different": "diffrent", "beautiful": "beutiful", "little": "litle",
+    "together": "togeter", "always": "allways", "again": "agen",
+    "their": "thier", "listen": "lisen",
+}
+
+
+def _swap(raw, new):
+    """Replace the word inside raw, keeping punctuation and a leading capital."""
+    core = raw.strip(_PUNCT)
+    start = raw.index(core)
+    head, tail = raw[:start], raw[start + len(core):]
+    if core[:1].isupper():
+        new = new.capitalize()
+    return head + new + tail
+
+
+def wrong_vocab(sentence, rng):
+    """Swap a word for a look-alike with another meaning (then -> than)."""
+    words = sentence.split()
+    candidates = [
+        i for i, w in enumerate(words) if w.lower().strip(_PUNCT) in CONFUSABLE
+    ]
+    if not candidates:
+        return sentence
+    i = rng.choice(candidates)
+    key = words[i].lower().strip(_PUNCT)
+    words[i] = _swap(words[i], rng.choice(CONFUSABLE[key]))
+    return " ".join(words)
+
+
+def phonetic_spelling(sentence, rng):
+    """Spell 1 to 3 words by sound (was -> woz, because -> bekaus)."""
+    words = sentence.split()
+    candidates = [i for i, w in enumerate(words) if w.lower().strip(_PUNCT) in SOUND]
+    if not candidates:
+        return sentence
+    count = min(len(candidates), rng.choice([1, 2, 3]))
+    for i in rng.sample(candidates, count):
+        words[i] = _swap(words[i], SOUND[words[i].lower().strip(_PUNCT)])
+    return " ".join(words)
+
+
 ERROR_FUNCS = [
     add_typo,
     drop_article,
@@ -229,6 +296,8 @@ ERROR_FUNCS = [
     wrong_did,
     drop_plural,
     wrong_conjugation,
+    wrong_vocab,
+    phonetic_spelling,
 ]
 
 

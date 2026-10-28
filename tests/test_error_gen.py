@@ -8,11 +8,13 @@ from corrector.error_gen import (
     drop_letter,
     drop_plural,
     lowercase_start,
+    phonetic_spelling,
     wrong_a_an,
     wrong_agreement,
     wrong_conjugation,
     wrong_did,
     wrong_verb_form,
+    wrong_vocab,
 )
 
 
@@ -66,6 +68,21 @@ def test_wrong_did():
 def test_drop_plural():
     assert drop_plural("Cats sleep.", random.Random(0)) == "Cat sleep."
 
+
 def test_wrong_conjugation():
     out = wrong_conjugation("She went home.", random.Random(0))
     assert out in {"She goed home.", "She go home."}
+
+
+def test_wrong_vocab():
+    out = wrong_vocab("I would rather lose.", random.Random(0))
+    assert out == "I would rather loose."
+
+
+def test_phonetic_keeps_punctuation():
+    assert phonetic_spelling("It was.", random.Random(0)) == "It woz."
+
+
+def test_phonetic_changes_a_word():
+    s = "Because my friend was late."
+    assert phonetic_spelling(s, random.Random(0)) != s
