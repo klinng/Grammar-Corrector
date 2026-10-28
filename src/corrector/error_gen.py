@@ -166,6 +166,54 @@ def drop_plural(sentence, rng):
     words[i] = words[i][:-1]
     return " ".join(words)
 
+IRREGULAR = {
+    "go": ("went", "gone"), "run": ("ran", "run"), "eat": ("ate", "eaten"),
+    "see": ("saw", "seen"), "take": ("took", "taken"), "write": ("wrote", "written"),
+    "come": ("came", "come"), "give": ("gave", "given"), "know": ("knew", "known"),
+    "buy": ("bought", "bought"), "bring": ("brought", "brought"),
+    "think": ("thought", "thought"), "begin": ("began", "begun"),
+    "drink": ("drank", "drunk"), "drive": ("drove", "driven"),
+    "fall": ("fell", "fallen"), "forget": ("forgot", "forgotten"),
+    "get": ("got", "got"), "have": ("had", "had"), "make": ("made", "made"),
+    "say": ("said", "said"), "tell": ("told", "told"), "choose": ("chose", "chosen"),
+    "break": ("broke", "broken"), "speak": ("spoke", "spoken"),
+    "swim": ("swam", "swum"), "wear": ("wore", "worn"), "win": ("won", "won"),
+    "leave": ("left", "left"), "find": ("found", "found"), "feel": ("felt", "felt"),
+    "keep": ("kept", "kept"), "sit": ("sat", "sat"), "stand": ("stood", "stood"),
+    "teach": ("taught", "taught"), "catch": ("caught", "caught"),
+    "fly": ("flew", "flown"), "grow": ("grew", "grown"),
+    "throw": ("threw", "thrown"), "draw": ("drew", "drawn"), "sing": ("sang", "sung"),
+}
+
+PAST_TO_BASE = {}
+for _base, _forms in IRREGULAR.items():
+    for _form in _forms:
+        if _form != _base:
+            PAST_TO_BASE.setdefault(_form, _base)
+
+_PUNCT = ".,!?;:"
+
+
+def wrong_conjugation(sentence, rng):
+    """Replace an irregular past form by a wrong one (went -> goed or go)."""
+    words = sentence.split()
+    candidates = [
+        i for i, w in enumerate(words) if w.lower().strip(_PUNCT) in PAST_TO_BASE
+    ]
+    if not candidates:
+        return sentence
+    i = rng.choice(candidates)
+    raw = words[i]
+    base = PAST_TO_BASE[raw.lower().strip(_PUNCT)]
+    tail = raw[len(raw.rstrip(_PUNCT)):]
+    regular = base + ("d" if base.endswith("e") else "ed")
+    new = rng.choice([regular, base])
+    if raw[0].isupper():
+        new = new.capitalize()
+    words[i] = new + tail
+    return " ".join(words)
+
+
 ERROR_FUNCS = [
     add_typo,
     drop_article,
@@ -180,6 +228,7 @@ ERROR_FUNCS = [
     wrong_agreement,
     wrong_did,
     drop_plural,
+    wrong_conjugation,
 ]
 
 
