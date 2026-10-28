@@ -72,7 +72,6 @@ Train the model with `python src/corrector/train.py`, or on a free Colab GPU wit
 ```bash
 python app.py "i wnet there before"
 python app.py -f input.txt -o output.txt
-python -m streamlit run web.py
 ```
 
 ### Optional: smart mode (local)
