@@ -36,7 +36,7 @@ JFLEG test set, 748 sentences never used for training, GLEU score, T5 model only
 | System | GLEU |
 |---|---|
 | No change (baseline) | 0.7736 |
-| Fine-tuned T5-small (this project) | 0.7933 |
+| Fine-tuned T5-small (this project) | 0.7969 |
 
 ## How it works
 

@@ -8,7 +8,7 @@
 
 **Output**
 
-> I went there before and i have an apple.
+> I went there before and I have an apple.
 
 ## Example 2
 
@@ -18,7 +18,7 @@
 
 **Output**
 
-> Because they were very hungry, they decided to cook a massive dinner on the sidewalk.
+> Because they were very hungry, they decided to cook a massive diner on the sidewalk.
 
 ## Example 3
 
@@ -28,7 +28,7 @@
 
 **Output**
 
-> It there how your day today was it good to have you here.
+> He there how your day today was it good to have you here.
 
 ## Example 4
 
@@ -38,7 +38,7 @@
 
 **Output**
 
-> Yesterday, these men were wanting to the grocery shop for buying sum fresh televisions.
+> Yesterday, the mans were wanting to the grocery shop for buying sum fresh televisions.
 
 ## Example 5
 
@@ -48,4 +48,4 @@
 
 **Output**
 
-> Yesterday, I had a my friends wo walked to the shopping center, we had seen a very big dog who barked lordly to we. Mi friend Jon, which is normal very brave, comes to run away beaus he wears so much scared of the animes.
+> Yesterday, when I was one of my friends who walked to the shopping center, we had seen a very big dog who barked lordly to we. Mi friend Jon, which is normal very bravest, came to run away the beaus he wears so much scared of the animes.
