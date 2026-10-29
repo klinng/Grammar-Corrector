@@ -6,6 +6,7 @@
 | pipeline (spell + model + safety) | 0.687 |
 | model + safety (no spell) | 0.632 |
 | model only | 0.664 |
+| spell + model (no safety) | 0.708 |
 
 ## Example 1
 
@@ -22,6 +23,10 @@
 > I went there before and I have an apple.
 
 **model only**
+
+> I went there before and I have an apple.
+
+**spell + model (no safety)**
 
 > I went there before and I have an apple.
 
@@ -47,6 +52,10 @@
 
 > Because they were very hungry, they decided to pick a massive diner on the sidewalk.
 
+**spell + model (no safety)**
+
+> Because they were very hungry, they decided to cook a massive diner on the sidewalk.
+
 **Gold**
 
 > Because they were very hungry, they decided to cook a massive dinner on the sidewalk.
@@ -68,6 +77,10 @@
 **model only**
 
 > His there shout your dasy today was it good to have youherer
+
+**spell + model (no safety)**
+
+> His there how your day today was it good to have you here .
 
 **Gold**
 
@@ -91,6 +104,10 @@
 
 > Today , the thy mans was going to the grocery shop for buying sum fresh televisions.
 
+**spell + model (no safety)**
+
+> Yesterday , the thy men were wanting to the grocery shop for buying sum fresh televisions.
+
 **Gold**
 
 > Yesterday, the three men were going to the grocery shop to buy some fresh televisions.
@@ -112,6 +129,10 @@
 **model only**
 
 > Today when my friends were walking to the shopping center , we had seen a very big dog who barked kindly to us. My friend Jon, which is usually very bravest, came to run away because he was so much sacked of the animals.
+
+**spell + model (no safety)**
+
+> Yesterday when I and my friends were walking to the shopping center , we saw a very big dog who barked kindly to us. My friend Jon, which is normal very bravest, comes to run away beaus he wears so much scared of the animes.
 
 **Gold**
 
@@ -135,6 +156,10 @@
 
 > I don't know what to do about my work. It is too hard for me.
 
+**spell + model (no safety)**
+
+> I don't know what to do about my homework. It is too hard for me.
+
 **Gold**
 
 > I don't know what to do about my homework. It's too hard for me.
@@ -156,6 +181,10 @@
 **model only**
 
 > The last weak we went to the beech and swimed all day. It was grate fun.
+
+**spell + model (no safety)**
+
+> Last weak we good to the beech and slime all day. It was grate fun.
 
 **Gold**
 
@@ -179,6 +208,10 @@
 
 > She does not like to eat vegetables but she loves fruits.
 
+**spell + model (no safety)**
+
+> She doesn't like to eat vegetables but she loves fruits.
+
 **Gold**
 
 > She doesn't like to eat vegetables, but she loves fruits.
@@ -198,6 +231,10 @@
 > My brother have two dogs and a cat. They play together every day.
 
 **model only**
+
+> My brother has two dogs and a cat. They play together every day.
+
+**spell + model (no safety)**
 
 > My brother has two dogs and a cat. They play together every day.
 
@@ -223,6 +260,10 @@
 
 > Yesterday I bought a new phone because my old one was broken.
 
+**spell + model (no safety)**
+
+> Yesterday I bought a new one because my old one was broken.
+
 **Gold**
 
 > Yesterday I bought a new phone because my old one was broken.
@@ -242,6 +283,10 @@
 > They are going to the library to study for their exam tomorrow.
 
 **model only**
+
+> They are going to the library to study for their exam tomorrow.
+
+**spell + model (no safety)**
 
 > They are going to the library to study for their exam tomorrow.
 
@@ -267,6 +312,10 @@
 
 > If I would have known about the meeting , I will come again.
 
+**spell + model (no safety)**
+
+> If I would have known about the meeting , I will come early.
+
 **Gold**
 
 > If I had known about the meeting, I would have come early.
@@ -288,6 +337,10 @@
 **model only**
 
 > The weather is really bad today, so we can not play out.
+
+**spell + model (no safety)**
+
+> The weather is really bad today, so we can't play outside.
 
 **Gold**
 
@@ -311,6 +364,10 @@
 
 > He asked me to borrow him my bike, but I did not want to.
 
+**spell + model (no safety)**
+
+> He asked me to borrow him my bike, but I didn't want to.
+
 **Gold**
 
 > He asked me to lend him my bike, but I didn't want to.
@@ -333,6 +390,10 @@
 
 > We were very tired after the long lecture, so we went to bed early.
 
+**spell + model (no safety)**
+
+> We were very tired after the long journey, so we went to bed early.
+
 **Gold**
 
 > We were very tired after the long journey, so we went to bed early.
@@ -352,6 +413,10 @@
 > Can you give me advice about which laptop I should buy?
 
 **model only**
+
+> Can you give me advice about which laptop I should buy?
+
+**spell + model (no safety)**
 
 > Can you give me advice about which laptop I should buy?
 
@@ -377,6 +442,10 @@
 
 > The teacher explained the lesson right, but some students still dident understand.
 
+**spell + model (no safety)**
+
+> The teacher explained the lesson wise, but some students still didn't understand.
+
 **Gold**
 
 > The teacher explained the lesson twice, but some students still didn't understand.
@@ -396,6 +465,10 @@
 > Me and my sister were waiting for the bus when it began to rain hardly.
 
 **model only**
+
+> Me and my sister were waiting for the bus when it began to rain hardly.
+
+**spell + model (no safety)**
 
 > Me and my sister were waiting for the bus when it began to rain hardly.
 
@@ -421,6 +494,10 @@
 
 > I have lived in this city since five years, and I really like it.
 
+**spell + model (no safety)**
+
+> I have lived in this city since five years, and I really like it.
+
 **Gold**
 
 > I have lived in this city for five years, and I really like it.
@@ -443,6 +520,10 @@
 
 > When we arrived at the restorant, all the tables were already taken.
 
+**spell + model (no safety)**
+
+> When we arrived at the restaurant, all the tables were already taken.
+
 **Gold**
 
 > When we arrived at the restaurant, all the tables were already taken.
@@ -462,6 +543,10 @@
 > She is more taller than her brother, but he is more stronger.
 
 **model only**
+
+> She is more taller than her brother, but he is more stronger.
+
+**spell + model (no safety)**
 
 > She is more taller than her brother, but he is more stronger.
 
@@ -487,6 +572,10 @@
 
 > Today, my friend was sick so he stayed at home and slept all day.
 
+**spell + model (no safety)**
+
+> Yesterday, my friend was so he stayed at home and sleeved all day.
+
 **Gold**
 
 > Yesterday, my friend was sick so he stayed at home and slept all day.
@@ -508,6 +597,10 @@
 **model only**
 
 > The children were playing in the garden when it suddenly started to snow.
+
+**spell + model (no safety)**
+
+> The children were playing in the garden when it suddenly started to snow .
 
 **Gold**
 
@@ -531,6 +624,10 @@
 
 > I am agree with you, but I think we should wait until Monday.
 
+**spell + model (no safety)**
+
+> I am agree with you, but I think we should wait until Monday.
+
 **Gold**
 
 > I agree with you, but I think we should wait until Monday.
@@ -550,6 +647,10 @@
 > Because of the traffic, we arrived late to the airport and missed our flight.
 
 **model only**
+
+> Because of the traffic, we arrived late to the airport and missed our flight.
+
+**spell + model (no safety)**
 
 > Because of the traffic, we arrived late to the airport and missed our flight.
 

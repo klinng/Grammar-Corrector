@@ -28,10 +28,22 @@ def model_only(text, tokenizer, model):
     return " ".join(correct_sentence(s, tokenizer, model) for s in split_sentences(text))
 
 
+def spell_model(text, tokenizer, model):
+    """Spell step + model, without the safety checks."""
+    from corrector.spell import fix_with_context
+
+    out = []
+    for sentence in split_sentences(text):
+        spelled, _unsure = fix_with_context(sentence)
+        out.append(correct_sentence(spelled, tokenizer, model))
+    return " ".join(out)
+
+
 MODES = {
     "pipeline (spell + model + safety)": correct_text,
     "model + safety (no spell)": model_safe,
     "model only": model_only,
+    "spell + model (no safety)": spell_model,
 }
 
 
