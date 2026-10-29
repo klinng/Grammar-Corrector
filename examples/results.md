@@ -32,7 +32,7 @@ GLEU vs gold: 0.839
 
 **Output**
 
-> He there how your day today was it good to have you here.
+> His there how your day today was it good to have you here .
 
 GLEU vs gold: 0.435
 
@@ -44,9 +44,9 @@ GLEU vs gold: 0.435
 
 **Output**
 
-> Yesterday, the mans were wanting to the grocery shop for buying sum fresh televisions.
+> Yesterday , the thy men were wanting to the grocery shop for buying sum fresh televisions.
 
-GLEU vs gold: 0.371
+GLEU vs gold: 0.403
 
 ## Example 5
 
@@ -56,9 +56,9 @@ GLEU vs gold: 0.371
 
 **Output**
 
-> Yesterday, when I was one of my friends who walked to the shopping center, we had seen a very big dog who barked lordly to we. Mi friend Jon, which is normal very bravest, came to run away the beaus he wears so much scared of the animes.
+> Yesterday when I and my friends were walking to the shopping center , we seen a very big dog who barked lordly to us. My friend Jon, which is normal very bravest, comes to run away beaus he wears so much scared of the animes.
 
-GLEU vs gold: 0.281
+GLEU vs gold: 0.342
 
 ## Example 6
 
@@ -68,9 +68,9 @@ GLEU vs gold: 0.281
 
 **Output**
 
-> I don't want to do about my homework. It is hard for me.
+> I don't know what to do about my homework. It is too hard for me.
 
-GLEU vs gold: 0.534
+GLEU vs gold: 0.774
 
 ## Example 7
 
@@ -92,9 +92,9 @@ GLEU vs gold: 0.371
 
 **Output**
 
-> She doesn't like to eat vegetables, but she loves fruits.
+> She doesn't like to eat vegetables but she loves fruits.
 
-GLEU vs gold: 1.000
+GLEU vs gold: 0.762
 
 ## Example 9
 
@@ -128,9 +128,9 @@ GLEU vs gold: 0.609
 
 **Output**
 
-> Their going to the library to study for their exam tomorrow.
+> They are going to the library to study for their exam tomorrow.
 
-GLEU vs gold: 0.905
+GLEU vs gold: 0.826
 
 ## Example 12
 
@@ -140,7 +140,7 @@ GLEU vs gold: 0.905
 
 **Output**
 
-> If I would have known about the meeting, I will come early.
+> If I would have known about the meeting , I will come early.
 
 GLEU vs gold: 0.640
 
@@ -188,9 +188,9 @@ GLEU vs gold: 0.828
 
 **Output**
 
-> Can you give me advice about which laptop I should to buy?
+> Can you give me advice about which laptop I should buy?
 
-GLEU vs gold: 0.674
+GLEU vs gold: 0.783
 
 ## Example 17
 
@@ -260,9 +260,9 @@ GLEU vs gold: 0.640
 
 **Output**
 
-> Yesterday, my friend was so he stayed at home and slept all day.
+> Yesterday, my friend was so he stayed at home and sleeved all day.
 
-GLEU vs gold: 0.828
+GLEU vs gold: 0.655
 
 ## Example 23
 
@@ -272,7 +272,7 @@ GLEU vs gold: 0.828
 
 **Output**
 
-> The children were playing in the garden when it suddenly started to snow.
+> The children were playing in the garden when it suddenly started to snow .
 
 GLEU vs gold: 1.000
 
@@ -284,9 +284,9 @@ GLEU vs gold: 1.000
 
 **Output**
 
-> I am agree with you, but I think we should wait until monday.
+> I am agree with you, but I think we should wait until Monday.
 
-GLEU vs gold: 0.741
+GLEU vs gold: 0.870
 
 ## Example 25
 
@@ -296,8 +296,8 @@ GLEU vs gold: 0.741
 
 **Output**
 
-> Because of the traffic, we arrived late to the airport and misses our flight.
+> Because of the traffic, we arrived late to the airport and missed our flight.
 
-GLEU vs gold: 0.655
+GLEU vs gold: 0.828
 
-**Overall GLEU:** 0.663 (no change: 0.355)
+**Overall GLEU:** 0.687 (no change: 0.355)
