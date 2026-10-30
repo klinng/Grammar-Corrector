@@ -3,8 +3,8 @@
 | Mode | GLEU vs gold |
 |---|---|
 | no change | 0.355 |
-| pipeline (spell + model + safety) | 0.687 |
-| model + safety (no spell) | 0.632 |
+| pipeline (spell + model + safety) | 0.708 |
+| model + safety (no spell) | 0.645 |
 | model only | 0.664 |
 | spell + model (no safety) | 0.708 |
 
@@ -120,11 +120,11 @@
 
 **pipeline (spell + model + safety)**
 
-> Yesterday when I and my friends were walking to the shopping center , we seen a very big dog who barked lordly to us. My friend Jon, which is normal very bravest, comes to run away beaus he wears so much scared of the animes.
+> Yesterday when I and my friends were walking to the shopping center , we saw a very big dog who barked kindly to us. My friend Jon, which is normal very bravest, comes to run away beaus he wears so much scared of the animes.
 
 **model + safety (no spell)**
 
-> Today when my friends were walking to the shopping center , we had seen a very big dog who barked kindly to us. My friend Jon, which is normaly very bravest, came to run away because he was so much skared of the animals.
+> Today when my friends were walking to the shopping center , we had seen a very big dog who barked kindly to us. My friend Jon, which is normaly very bravest, comed to run away because he was so much skared of the animals.
 
 **model only**
 
@@ -224,11 +224,11 @@
 
 **pipeline (spell + model + safety)**
 
-> My brother have two dogs and a cat. They play together every day.
+> My brother has two dogs and a cat. They play together every day.
 
 **model + safety (no spell)**
 
-> My brother have two dogs and a cat. They play together every day.
+> My brother has two dogs and a cat. They play together every day.
 
 **model only**
 
@@ -250,7 +250,7 @@
 
 **pipeline (spell + model + safety)**
 
-> Yesterday I bayed a new one because my old one was broken.
+> Yesterday I bought a new one because my old one was broken.
 
 **model + safety (no spell)**
 
@@ -380,11 +380,11 @@
 
 **pipeline (spell + model + safety)**
 
-> We were very tired after the long journey, so we goes to bed early.
+> We were very tired after the long journey, so we went to bed early.
 
 **model + safety (no spell)**
 
-> We were very tired after the long jurney, so we goes to bed early.
+> We were very tired after the long jurney, so we went to bed early.
 
 **model only**
 

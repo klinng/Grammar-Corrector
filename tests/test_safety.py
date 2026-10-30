@@ -21,3 +21,8 @@ def test_wild_word_is_reverted():
 
 def test_good_fix_is_kept():
     assert revert_wild_words("she wos here", "she was here") == "she was here"
+
+
+def test_real_word_fix_is_kept():
+    out = revert_wild_words("he have two", "he has two", is_known=lambda w: True)
+    assert out == "he has two"
