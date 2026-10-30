@@ -33,13 +33,18 @@ def correct_sentence(sentence, tokenizer, model):
     return tokenizer.decode(out[0], skip_special_tokens=True)
 
 
+def tidy_punctuation(text):
+    """Remove spaces before , . ! ? ; : (the model copies JFLEG's spaced style)."""
+    return re.sub(r"\s+([,.!?;:])", r"\1", text)
+
+
 def correct_text(text, tokenizer, model, choices=None):
     results = []
     for sentence in split_sentences(text):
         spelled, _unsure = fix_with_context(sentence)
         corrected = correct_sentence(spelled, tokenizer, model)
         results.append(safe_correct(spelled, corrected))
-    return " ".join(results)
+    return tidy_punctuation(" ".join(results))
 
 
 if __name__ == "__main__":

@@ -7,6 +7,7 @@ from corrector.pipeline import (
     correct_text,
     load_model,
     split_sentences,
+    tidy_punctuation,
 )
 from corrector.safety import safe_correct
 
@@ -20,12 +21,13 @@ def model_safe(text, tokenizer, model):
     out = []
     for sentence in split_sentences(text):
         out.append(safe_correct(sentence, correct_sentence(sentence, tokenizer, model)))
-    return " ".join(out)
+    return tidy_punctuation(" ".join(out))
 
 
 def model_only(text, tokenizer, model):
     """The raw model output, no spell step and no safety checks."""
-    return " ".join(correct_sentence(s, tokenizer, model) for s in split_sentences(text))
+    parts = [correct_sentence(s, tokenizer, model) for s in split_sentences(text)]
+    return tidy_punctuation(" ".join(parts))
 
 
 def spell_model(text, tokenizer, model):
@@ -36,7 +38,7 @@ def spell_model(text, tokenizer, model):
     for sentence in split_sentences(text):
         spelled, _unsure = fix_with_context(sentence)
         out.append(correct_sentence(spelled, tokenizer, model))
-    return " ".join(out)
+    return tidy_punctuation(" ".join(out))
 
 
 MODES = {

@@ -68,7 +68,7 @@
 
 **pipeline (spell + model + safety)**
 
-> His there how your day today was it good to have you here .
+> His there how your day today was it good to have you here.
 
 **model + safety (no spell)**
 
@@ -80,7 +80,7 @@
 
 **spell + model (no safety)**
 
-> His there how your day today was it good to have you here .
+> His there how your day today was it good to have you here.
 
 **Gold**
 
@@ -94,19 +94,19 @@
 
 **pipeline (spell + model + safety)**
 
-> Yesterday , the thy men were wanting to the grocery shop for buying sum fresh televisions.
+> Yesterday, the thy men were wanting to the grocery shop for buying sum fresh televisions.
 
 **model + safety (no spell)**
 
-> Today , the thy mans was going to the grocery shop for buying sum fresh televisions.
+> Today, the thy mans was going to the grocery shop for buying sum fresh televisions.
 
 **model only**
 
-> Today , the thy mans was going to the grocery shop for buying sum fresh televisions.
+> Today, the thy mans was going to the grocery shop for buying sum fresh televisions.
 
 **spell + model (no safety)**
 
-> Yesterday , the thy men were wanting to the grocery shop for buying sum fresh televisions.
+> Yesterday, the thy men were wanting to the grocery shop for buying sum fresh televisions.
 
 **Gold**
 
@@ -120,19 +120,19 @@
 
 **pipeline (spell + model + safety)**
 
-> Yesterday when I and my friends were walking to the shopping center , we saw a very big dog who barked kindly to us. My friend Jon, which is normal very bravest, comes to run away beaus he wears so much scared of the animes.
+> Yesterday when I and my friends were walking to the shopping center, we saw a very big dog who barked kindly to us. My friend Jon, which is normal very bravest, comes to run away beaus he wears so much scared of the animes.
 
 **model + safety (no spell)**
 
-> Today when my friends were walking to the shopping center , we had seen a very big dog who barked kindly to us. My friend Jon, which is normaly very bravest, comed to run away because he was so much skared of the animals.
+> Today when my friends were walking to the shopping center, we had seen a very big dog who barked kindly to us. My friend Jon, which is normaly very bravest, comed to run away because he was so much skared of the animals.
 
 **model only**
 
-> Today when my friends were walking to the shopping center , we had seen a very big dog who barked kindly to us. My friend Jon, which is usually very bravest, came to run away because he was so much sacked of the animals.
+> Today when my friends were walking to the shopping center, we had seen a very big dog who barked kindly to us. My friend Jon, which is usually very bravest, came to run away because he was so much sacked of the animals.
 
 **spell + model (no safety)**
 
-> Yesterday when I and my friends were walking to the shopping center , we saw a very big dog who barked kindly to us. My friend Jon, which is normal very bravest, comes to run away beaus he wears so much scared of the animes.
+> Yesterday when I and my friends were walking to the shopping center, we saw a very big dog who barked kindly to us. My friend Jon, which is normal very bravest, comes to run away beaus he wears so much scared of the animes.
 
 **Gold**
 
@@ -302,19 +302,19 @@
 
 **pipeline (spell + model + safety)**
 
-> If I would have known about the meeting , I will come early.
+> If I would have known about the meeting, I will come early.
 
 **model + safety (no spell)**
 
-> If I would have known about the meeting , I will come again.
+> If I would have known about the meeting, I will come again.
 
 **model only**
 
-> If I would have known about the meeting , I will come again.
+> If I would have known about the meeting, I will come again.
 
 **spell + model (no safety)**
 
-> If I would have known about the meeting , I will come early.
+> If I would have known about the meeting, I will come early.
 
 **Gold**
 
@@ -588,7 +588,7 @@
 
 **pipeline (spell + model + safety)**
 
-> The children were playing in the garden when it suddenly started to snow .
+> The children were playing in the garden when it suddenly started to snow.
 
 **model + safety (no spell)**
 
@@ -600,7 +600,7 @@
 
 **spell + model (no safety)**
 
-> The children were playing in the garden when it suddenly started to snow .
+> The children were playing in the garden when it suddenly started to snow.
 
 **Gold**
 
