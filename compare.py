@@ -1,6 +1,7 @@
 """Run messy paragraphs through several modes and score them against gold text."""
 
 import os
+import sys
 
 from corrector.pipeline import (
     correct_sentence,
@@ -11,9 +12,10 @@ from corrector.pipeline import (
 )
 from corrector.safety import safe_correct
 
-INPUT = "examples/messy.txt"
-GOLD = "examples/gold.txt"
-OUTPUT = "examples/results.md"
+SUFFIX = "_fresh" if "--fresh" in sys.argv else ""
+INPUT = f"examples/messy{SUFFIX}.txt"
+GOLD = f"examples/gold{SUFFIX}.txt"
+OUTPUT = f"examples/results{SUFFIX}.md"
 
 
 def model_safe(text, tokenizer, model):
