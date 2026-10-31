@@ -5,7 +5,7 @@ import argparse
 import evaluate
 from datasets import load_dataset
 
-from corrector.pipeline import correct_sentence, load_model
+from corrector.pipeline import correct_sentence, load_model, restore_commas
 from corrector.safety import safe_correct
 from corrector.spell import fix_with_context
 
@@ -30,10 +30,14 @@ def main():
         raw = correct_sentence(sentence, tokenizer, model)
         spelled, _unsure = fix_with_context(sentence)
         after_spell = correct_sentence(spelled, tokenizer, model)
-        outputs["model only"].append(raw)
-        outputs["model + safety (no spell)"].append(safe_correct(sentence, raw))
-        outputs["spell + model (no safety)"].append(after_spell)
-        outputs["full pipeline"].append(safe_correct(spelled, after_spell))
+        outputs["model only"].append(restore_commas(sentence, raw))
+        outputs["model + safety (no spell)"].append(
+            restore_commas(sentence, safe_correct(sentence, raw))
+        )
+        outputs["spell + model (no safety)"].append(restore_commas(spelled, after_spell))
+        outputs["full pipeline"].append(
+            restore_commas(spelled, safe_correct(spelled, after_spell))
+        )
         if i % 25 == 0:
             print(f"{i}/{len(sources)} sentences done")
 

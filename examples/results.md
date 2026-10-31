@@ -3,10 +3,10 @@
 | Mode | GLEU vs gold |
 |---|---|
 | no change | 0.355 |
-| pipeline (spell + model + safety) | 0.708 |
+| pipeline (spell + model + safety) | 0.706 |
 | model + safety (no spell) | 0.645 |
 | model only | 0.664 |
-| spell + model (no safety) | 0.708 |
+| spell + model (no safety) | 0.706 |
 
 ## Example 1
 
@@ -94,7 +94,7 @@
 
 **pipeline (spell + model + safety)**
 
-> Yesterday, the thy men were wanting to the grocery shop for buying sum fresh televisions.
+> Yesterday,, the thy men were wanting to the grocery shop for buying sum fresh televisions.
 
 **model + safety (no spell)**
 
@@ -106,7 +106,7 @@
 
 **spell + model (no safety)**
 
-> Yesterday, the thy men were wanting to the grocery shop for buying sum fresh televisions.
+> Yesterday,, the thy men were wanting to the grocery shop for buying sum fresh televisions.
 
 **Gold**
 
@@ -120,19 +120,19 @@
 
 **pipeline (spell + model + safety)**
 
-> Yesterday when I and my friends were walking to the shopping center, we saw a very big dog who barked kindly to us. My friend Jon, which is normal very bravest, comes to run away beaus he wears so much scared of the animes.
+> Yesterday, when I and my friends were walking to the shopping center,, we saw a very big dog who barked kindly to us. My friend Jon, which is normal very bravest, comes to run away beaus he wears so much scared of the animes.
 
 **model + safety (no spell)**
 
-> Today when my friends were walking to the shopping center, we had seen a very big dog who barked kindly to us. My friend Jon, which is normaly very bravest, comed to run away because he was so much skared of the animals.
+> Today when my friends were walking to the shopping center,, we had seen a very big dog who barked kindly to us. My friend Jon, which is normaly very bravest, comed to run away because he was so much skared of the animals.
 
 **model only**
 
-> Today when my friends were walking to the shopping center, we had seen a very big dog who barked kindly to us. My friend Jon, which is usually very bravest, came to run away because he was so much sacked of the animals.
+> Today when my friends were walking to the shopping center,, we had seen a very big dog who barked kindly to us. My friend Jon, which is usually very bravest, came to run away because he was so much sacked of the animals.
 
 **spell + model (no safety)**
 
-> Yesterday when I and my friends were walking to the shopping center, we saw a very big dog who barked kindly to us. My friend Jon, which is normal very bravest, comes to run away beaus he wears so much scared of the animes.
+> Yesterday, when I and my friends were walking to the shopping center,, we saw a very big dog who barked kindly to us. My friend Jon, which is normal very bravest, comes to run away beaus he wears so much scared of the animes.
 
 **Gold**
 
@@ -198,19 +198,19 @@
 
 **pipeline (spell + model + safety)**
 
-> She doesn't like to eat vegetables but she loves fruits.
+> She doesn't like to eat vegetables, but she loves fruits.
 
 **model + safety (no spell)**
 
-> She does not like to eat vegetables but she loves fruits.
+> She does not like to eat vegetables, but she loves fruits.
 
 **model only**
 
-> She does not like to eat vegetables but she loves fruits.
+> She does not like to eat vegetables, but she loves fruits.
 
 **spell + model (no safety)**
 
-> She doesn't like to eat vegetables but she loves fruits.
+> She doesn't like to eat vegetables, but she loves fruits.
 
 **Gold**
 
@@ -302,19 +302,19 @@
 
 **pipeline (spell + model + safety)**
 
-> If I would have known about the meeting, I will come early.
+> If I would have known about the meeting,, I will come early.
 
 **model + safety (no spell)**
 
-> If I would have known about the meeting, I will come again.
+> If I would have known about the meeting,, I will come again.
 
 **model only**
 
-> If I would have known about the meeting, I will come again.
+> If I would have known about the meeting,, I will come again.
 
 **spell + model (no safety)**
 
-> If I would have known about the meeting, I will come early.
+> If I would have known about the meeting,, I will come early.
 
 **Gold**
 
