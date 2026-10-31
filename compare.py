@@ -13,7 +13,12 @@ from corrector.pipeline import (
 )
 from corrector.safety import safe_correct
 
-SUFFIX = "_fresh" if "--fresh" in sys.argv else ""
+if "--fresh2" in sys.argv:
+    SUFFIX = "_fresh2"
+elif "--fresh" in sys.argv:
+    SUFFIX = "_fresh"
+else:
+    SUFFIX = ""
 INPUT = f"examples/messy{SUFFIX}.txt"
 GOLD = f"examples/gold{SUFFIX}.txt"
 OUTPUT = f"examples/results{SUFFIX}.md"
