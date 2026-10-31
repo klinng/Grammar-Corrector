@@ -7,6 +7,7 @@ from corrector.pipeline import (
     correct_sentence,
     correct_text,
     load_model,
+    restore_commas,
     split_sentences,
     tidy_punctuation,
 )
@@ -22,13 +23,17 @@ def model_safe(text, tokenizer, model):
     """Model + safety checks, without the spell step."""
     out = []
     for sentence in split_sentences(text):
-        out.append(safe_correct(sentence, correct_sentence(sentence, tokenizer, model)))
+        raw = correct_sentence(sentence, tokenizer, model)
+        out.append(restore_commas(sentence, safe_correct(sentence, raw)))
     return tidy_punctuation(" ".join(out))
 
 
 def model_only(text, tokenizer, model):
     """The raw model output, no spell step and no safety checks."""
-    parts = [correct_sentence(s, tokenizer, model) for s in split_sentences(text)]
+    parts = [
+        restore_commas(s, correct_sentence(s, tokenizer, model))
+        for s in split_sentences(text)
+    ]
     return tidy_punctuation(" ".join(parts))
 
 
@@ -39,7 +44,7 @@ def spell_model(text, tokenizer, model):
     out = []
     for sentence in split_sentences(text):
         spelled, _unsure = fix_with_context(sentence)
-        out.append(correct_sentence(spelled, tokenizer, model))
+        out.append(restore_commas(spelled, correct_sentence(spelled, tokenizer, model)))
     return tidy_punctuation(" ".join(out))
 
 

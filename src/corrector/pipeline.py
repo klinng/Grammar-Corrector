@@ -1,4 +1,5 @@
 import re
+from difflib import SequenceMatcher
 
 from corrector.safety import safe_correct
 from corrector.spell import fix_with_context
@@ -38,12 +39,33 @@ def tidy_punctuation(text):
     return re.sub(r"\s+([,.!?;:])", r"\1", text)
 
 
+def restore_commas(original, corrected):
+    """Put back commas the model dropped (only where the word before it is unchanged)."""
+    orig = original.split()
+    new = corrected.split()
+
+    def core(word):
+        return re.sub(r"\W", "", word).lower()
+
+    matcher = SequenceMatcher(None, [core(w) for w in orig], [core(w) for w in new])
+    out = list(new)
+    for tag, i1, i2, j1, _j2 in matcher.get_opcodes():
+        if tag != "equal":
+            continue
+        for k in range(i2 - i1):
+            has_comma = orig[i1 + k].endswith(",")
+            if has_comma and not out[j1 + k].endswith((",", ".", "!", "?", ";", ":")):
+                out[j1 + k] += ","
+    return " ".join(out)
+
+
 def correct_text(text, tokenizer, model, choices=None):
     results = []
     for sentence in split_sentences(text):
         spelled, _unsure = fix_with_context(sentence)
         corrected = correct_sentence(spelled, tokenizer, model)
-        results.append(safe_correct(spelled, corrected))
+        safe = safe_correct(spelled, corrected)
+        results.append(restore_commas(spelled, safe))
     return tidy_punctuation(" ".join(results))
 
 
