@@ -181,17 +181,15 @@ def wrong_suggest(sentence, rng):
         if words[i + 2].lower() not in OBJECT:
             continue
         verb = _core(words[i + 3])
-        verb = _core(words[i + 3])
-        if (
+        is_base = (
             verb.isalpha()
             and verb not in AUX
             and verb not in PAST_TO_BASE
             and not verb.endswith("ed")
             and not (verb.endswith("s") and not verb.endswith("ss"))
-        ):
+        )
+        if is_base:
             spots.append(i)
-            if not verb.endswith("ed") and not (verb.endswith("s") and not verb.endswith("ss")):
-                spots.append(i)
     if not spots:
         return sentence
     i = rng.choice(spots)
@@ -208,12 +206,11 @@ def wrong_wh_order(sentence, rng):
             continue
         if (
             i + 3 < len(words)
-            and _core(words[i + 1]) in (DETS | {"a", "an"})
+            and _core(words[i + 1]) in DETS | {"a", "an"}
             and words[i + 2].isalpha()
             and _core(words[i + 3]) in BE_VERBS
         ):
             spots.append(("noun", i))
-
         if (
             i + 2 < len(words)
             and _core(words[i + 1]) in SUBJECTS

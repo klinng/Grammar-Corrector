@@ -3,10 +3,10 @@
 | Mode | GLEU vs gold |
 |---|---|
 | no change | 0.355 |
-| pipeline (spell + model + safety) | 0.706 |
-| model + safety (no spell) | 0.645 |
-| model only | 0.664 |
-| spell + model (no safety) | 0.706 |
+| pipeline (spell + model + safety) | 0.708 |
+| model + safety (no spell) | 0.650 |
+| model only | 0.668 |
+| spell + model (no safety) | 0.708 |
 
 ## Example 1
 
@@ -120,7 +120,7 @@
 
 **pipeline (spell + model + safety)**
 
-> Yesterday, when I and my friends were walking to the shopping center,, we saw a very big dog who barked kindly to us. My friend Jon, which is normal very bravest, comes to run away beaus he wears so much scared of the animes.
+> Yesterday, when I and my friends went to the shopping center,, we saw a very big dog who barked kindly to us. My friend Jon, which is normal very bravest, comes to run away beaus he wears so much scared of the animes.
 
 **model + safety (no spell)**
 
@@ -132,7 +132,7 @@
 
 **spell + model (no safety)**
 
-> Yesterday, when I and my friends were walking to the shopping center,, we saw a very big dog who barked kindly to us. My friend Jon, which is normal very bravest, comes to run away beaus he wears so much scared of the animes.
+> Yesterday, when I and my friends went to the shopping center,, we saw a very big dog who barked kindly to us. My friend Jon, which is normal very bravest, comes to run away beaus he wears so much scared of the animes.
 
 **Gold**
 
@@ -384,11 +384,11 @@
 
 **model + safety (no spell)**
 
-> We were very tired after the long jurney, so we went to bed early.
+> We were very tired after the long journey, so we went to bed early.
 
 **model only**
 
-> We were very tired after the long lecture, so we went to bed early.
+> We were very tired after the long journey, so we went to bed early.
 
 **spell + model (no safety)**
 
@@ -436,11 +436,11 @@
 
 **model + safety (no spell)**
 
-> The teacher explained the lesson twise, but some students still dident understand.
+> The teacher explained the lesson right, but some students still did not understand.
 
 **model only**
 
-> The teacher explained the lesson right, but some students still dident understand.
+> The teacher explained the lesson right, but some students still did not understand.
 
 **spell + model (no safety)**
 
