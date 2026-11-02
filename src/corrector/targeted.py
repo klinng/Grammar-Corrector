@@ -6,6 +6,9 @@ from corrector.error_gen import PAST_TO_BASE
 
 _PUNCT = ".,!?;:\"'()"
 
+# Same prefix as data_prep.PREFIX, kept here so this module needs no heavy imports.
+PREFIX = "fix grammar: "
+
 AUX = {
     "will", "would", "can", "could", "shall", "should", "may", "might", "must",
     "is", "are", "was", "were", "am", "be", "been", "being", "have", "has", "had",
@@ -414,8 +417,6 @@ def make_targeted_pairs(per_family=300, identity=40, seed=0, pool=None):
 
     Pass pool=[] to use templates only.
     """
-    from corrector.data_prep import PREFIX
-
     rng = random.Random(seed)
     if pool is None:
         pool = _mine_pool()
