@@ -15,6 +15,7 @@ from corrector.data_prep import (
     make_synthetic_pairs,
     make_wiki_pairs,
 )
+from corrector.targeted import make_targeted_pairs
 
 MODEL_NAME = "google/flan-t5-base"
 OUTPUT_DIR = "models/t5-small-gec"
@@ -30,6 +31,10 @@ def build_dataset(tokenizer):
     random.Random(0).shuffle(pairs)
     print("Pairs available:", len(pairs))
     pairs = pairs[:MAX_EXAMPLES]
+    targeted = make_targeted_pairs()
+    print("Targeted grammar pairs added:", len(targeted))
+    pairs += targeted
+    random.Random(1).shuffle(pairs)
 
     ds = Dataset.from_dict(
         {"source": [p[0] for p in pairs], "target": [p[1] for p in pairs]}
