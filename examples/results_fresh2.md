@@ -3,10 +3,10 @@
 | Mode | GLEU vs gold |
 |---|---|
 | no change | 0.620 |
-| pipeline (spell + model + safety) | 0.794 |
-| model + safety (no spell) | 0.754 |
-| model only | 0.765 |
-| spell + model (no safety) | 0.794 |
+| pipeline (spell + model + safety) | 0.948 |
+| model + safety (no spell) | 0.916 |
+| model only | 0.927 |
+| spell + model (no safety) | 0.948 |
 
 ## Example 1
 
@@ -16,19 +16,19 @@
 
 **pipeline (spell + model + safety)**
 
-> My cousin is more older than me, and he is more richer than my uncle.
+> My cousin is older than me, and he is richer than my uncle.
 
 **model + safety (no spell)**
 
-> My cousin is more older than me, and he is more richer than my uncle.
+> My cousin is older than me, and he is richer than my uncle.
 
 **model only**
 
-> My cousin is more older than me, and he is more richer than my uncle.
+> My cousin is older than me, and he is richer than my uncle.
 
 **spell + model (no safety)**
 
-> My cousin is more older than me, and he is more richer than my uncle.
+> My cousin is older than me, and he is richer than my uncle.
 
 **Gold**
 
@@ -42,19 +42,19 @@
 
 **pipeline (spell + model + safety)**
 
-> They are waiting for the bus since two hours, and the weather is cold.
+> They are waiting for the bus for two hours, and the weather is cold.
 
 **model + safety (no spell)**
 
-> They are waiting for the bus since two hours, and the weather is cold.
+> They are waiting for the bus for two hours, and the weather is cold.
 
 **model only**
 
-> They are waiting for the bus since two hours, and the weather is cold.
+> They are waiting for the bus for two hours, and the weather is cold.
 
 **spell + model (no safety)**
 
-> They are waiting for the bus since two hours, and the weather is cold.
+> They are waiting for the bus for two hours, and the weather is cold.
 
 **Gold**
 
@@ -68,19 +68,19 @@
 
 **pipeline (spell + model + safety)**
 
-> I am disagree with the manager about the new schedule.
+> I disagree with the manager about the new schedule.
 
 **model + safety (no spell)**
 
-> I am disagree with the manager about the new schedule.
+> I disagree with the manager about the new schedule.
 
 **model only**
 
-> I am disagree with the manager about the new schedule.
+> I disagree with the manager about the new schedule.
 
 **spell + model (no safety)**
 
-> I am disagree with the manager about the new schedule.
+> I disagree with the manager about the new schedule.
 
 **Gold**
 
@@ -94,19 +94,19 @@
 
 **pipeline (spell + model + safety)**
 
-> If the manager will agree, we will start the project on Monday.
+> If the manager agrees, we will start the project on Monday.
 
 **model + safety (no spell)**
 
-> If the manager will agree, we will start the project on Monday.
+> If the manager agrees, we will start the project on Monday.
 
 **model only**
 
-> If the manager will agree, we will start the project on Monday.
+> If the manager agrees, we will start the project on Monday.
 
 **spell + model (no safety)**
 
-> If the manager will agree, we will start the project on Monday.
+> If the manager agrees, we will start the project on Monday.
 
 **Gold**
 
@@ -120,19 +120,19 @@
 
 **pipeline (spell + model + safety)**
 
-> The doctor recommended me to drink more water and to sleep early.
+> The doctor recommended that I drink more water and to sleep early.
 
 **model + safety (no spell)**
 
-> The doctor recommended me to drink more water and to sleep early.
+> The doctor recommended that I drink more water and to sleep early.
 
 **model only**
 
-> The doctor recommended me to drink more water and to sleep early.
+> The doctor recommended that I drink more water and to sleep early.
 
 **spell + model (no safety)**
 
-> The doctor recommended me to drink more water and to sleep early.
+> The doctor recommended that I drink more water and to sleep early.
 
 **Gold**
 
@@ -146,19 +146,19 @@
 
 **pipeline (spell + model + safety)**
 
-> He wondered why the shop closed so early.
+> He wondered why the shop was closed so early.
 
 **model + safety (no spell)**
 
-> He wondered why was the shop closed so early.
+> He wondered why the shop was closed so early.
 
 **model only**
 
-> He wondered why was the shop closed so early.
+> He wondered why the shop was closed so early.
 
 **spell + model (no safety)**
 
-> He wondered why the shop closed so early.
+> He wondered why the shop was closed so early.
 
 **Gold**
 
@@ -172,19 +172,19 @@
 
 **pipeline (spell + model + safety)**
 
-> Next weak my family is going to visit us from Canada.
+> Next week my family is going to visit us from Canada.
 
 **model + safety (no spell)**
 
-> Next weak my family is going to visit us from Canada.
+> Next week my family is going to visit us from Canada.
 
 **model only**
 
-> Next weak my family is going to visit us from Canada.
+> Next week my family is going to visit us from Canada.
 
 **spell + model (no safety)**
 
-> Next weak my family is going to visit us from Canada.
+> Next week my family is going to visit us from Canada.
 
 **Gold**
 
@@ -254,11 +254,11 @@
 
 **model + safety (no spell)**
 
-> We were very hungry, so we ordered two pizzas and eated them all.
+> We were very hungry, so we ordered two pizzas and ate them all.
 
 **model only**
 
-> We were very hungry, so we ordered two pizzas and enjoyed them all.
+> We were very hungry, so we ordered two pizzas and ate them all.
 
 **spell + model (no safety)**
 
@@ -276,19 +276,19 @@
 
 **pipeline (spell + model + safety)**
 
-> The new restaurant is the most cheapest in the whole town.
+> The new restaurant is the cheapest in the whole town.
 
 **model + safety (no spell)**
 
-> The new restaurant is the most cheapest in the whole town.
+> The new restaurant is the cheapest in the whole town.
 
 **model only**
 
-> The new restaurant is the most cheapest in the whole town.
+> The new restaurant is the cheapest in the whole town.
 
 **spell + model (no safety)**
 
-> The new restaurant is the most cheapest in the whole town.
+> The new restaurant is the cheapest in the whole town.
 
 **Gold**
 
@@ -302,19 +302,19 @@
 
 **pipeline (spell + model + safety)**
 
-> My friend has been living in Spain since six years, and he speaks spanish fluently.
+> My friend has been living in Spain for six years, and he speaks spanish fluently.
 
 **model + safety (no spell)**
 
-> My friend has been living in Spain since six years, and he speaks spanish fluently.
+> My friend has been living in Spain for six years, and he speaks spanish fluently.
 
 **model only**
 
-> My friend has been living in Spain since six years, and he speaks spanish fluently.
+> My friend has been living in Spain for six years, and he speaks spanish fluently.
 
 **spell + model (no safety)**
 
-> My friend has been living in Spain since six years, and he speaks spanish fluently.
+> My friend has been living in Spain for six years, and he speaks spanish fluently.
 
 **Gold**
 
@@ -354,19 +354,19 @@
 
 **pipeline (spell + model + safety)**
 
-> If you will come early,, I can show you the garden.
+> If you come early, I can show you the garden.
 
 **model + safety (no spell)**
 
-> If you will come early,, I can show you the garden.
+> If you come early, I can show you the garden.
 
 **model only**
 
-> If you will come early,, I can show you the garden.
+> If you come early, I can show you the garden.
 
 **spell + model (no safety)**
 
-> If you will come early,, I can show you the garden.
+> If you come early, I can show you the garden.
 
 **Gold**
 
@@ -380,19 +380,19 @@
 
 **pipeline (spell + model + safety)**
 
-> Nobody knows where is the key to the garage.
+> Nobody knows where the key to the garage is.
 
 **model + safety (no spell)**
 
-> Nobody knows where is the key to the garage.
+> Nobody knows where the key to the garage is.
 
 **model only**
 
-> Nobody knows where is the key to the garage.
+> Nobody knows where the key to the garage is.
 
 **spell + model (no safety)**
 
-> Nobody knows where is the key to the garage.
+> Nobody knows where the key to the garage is.
 
 **Gold**
 
@@ -406,19 +406,19 @@
 
 **pipeline (spell + model + safety)**
 
-> The teacher suggested us to read two books during the holidays.
+> The teacher suggested that we read two books during the holidays.
 
 **model + safety (no spell)**
 
-> The teacher suggested us to read two books during the holidays.
+> The teacher suggested that we read two books during the holidays.
 
 **model only**
 
-> The teacher suggested us to read two books during the holidays.
+> The teacher suggested that we read two books during the holidays.
 
 **spell + model (no safety)**
 
-> The teacher suggested us to read two books during the holidays.
+> The teacher suggested that we read two books during the holidays.
 
 **Gold**
 
@@ -462,11 +462,11 @@
 
 **model + safety (no spell)**
 
-> I have forgot my umbrella at the office, so I got wet.
+> I have forgotten my umbrella at the office, so I got wet.
 
 **model only**
 
-> I have forgot my umbrella at the office, so I got wet.
+> I have forgotten my umbrella at the office, so I got wet.
 
 **spell + model (no safety)**
 
