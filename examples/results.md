@@ -3,10 +3,10 @@
 | Mode | GLEU vs gold |
 |---|---|
 | no change | 0.355 |
-| pipeline (spell + model + safety) | 0.708 |
-| model + safety (no spell) | 0.650 |
-| model only | 0.668 |
-| spell + model (no safety) | 0.708 |
+| pipeline (spell + model + safety) | 0.715 |
+| model + safety (no spell) | 0.654 |
+| model only | 0.679 |
+| spell + model (no safety) | 0.715 |
 
 ## Example 1
 
@@ -20,11 +20,11 @@
 
 **model + safety (no spell)**
 
-> I went there before and I have an apple.
+> I went there before and i have an apple.
 
 **model only**
 
-> I went there before and I have an apple.
+> I went there before and i have an apple.
 
 **spell + model (no safety)**
 
@@ -46,11 +46,11 @@
 
 **model + safety (no spell)**
 
-> Because they were very hungry, they decided to cuuked a massive diner on the sidewalk.
+> Because they were very hungry, they decided to cuuked a masive diner on the sidewalk.
 
 **model only**
 
-> Because they were very hungry, they decided to pick a massive diner on the sidewalk.
+> Because they were very hungry, they decided to cut a masive diner on the sidewalk.
 
 **spell + model (no safety)**
 
@@ -72,11 +72,11 @@
 
 **model + safety (no spell)**
 
-> His there shout your dasy today was it good to have youherer
+> His there hosw your dasy today was it good to have you herer
 
 **model only**
 
-> His there shout your dasy today was it good to have youherer
+> His there shout your dasy today was it good to have you herer
 
 **spell + model (no safety)**
 
@@ -94,19 +94,19 @@
 
 **pipeline (spell + model + safety)**
 
-> Yesterday,, the thy men were wanting to the grocery shop for buying sum fresh televisions.
+> Yesterday, their men were wanting to the grocery shop for buying sum fresh televisions.
 
 **model + safety (no spell)**
 
-> Today, the thy mans was going to the grocery shop for buying sum fresh televisions.
+> Today, the thyms was going to the grocry shop for buying sum fresh televisions.
 
 **model only**
 
-> Today, the thy mans was going to the grocery shop for buying sum fresh televisions.
+> Today, the thyms was going to the grocry shop for buying sum fresh televisions.
 
 **spell + model (no safety)**
 
-> Yesterday,, the thy men were wanting to the grocery shop for buying sum fresh televisions.
+> Yesterday, their men were wanting to the grocery shop for buying sum fresh televisions.
 
 **Gold**
 
@@ -120,19 +120,19 @@
 
 **pipeline (spell + model + safety)**
 
-> Yesterday, when I and my friends went to the shopping center,, we saw a very big dog who barked kindly to us. My friend Jon, which is normal very bravest, comes to run away beaus he wears so much scared of the animes.
+> Yesterday, when I and my friends were walking to the shopping center, we had seen a very big dog who barked kindly to us. My friend Jon, which is normal very bravest, came to run away beauties he wears so much scared of the animes.
 
 **model + safety (no spell)**
 
-> Today when my friends were walking to the shopping center,, we had seen a very big dog who barked kindly to us. My friend Jon, which is normaly very bravest, comed to run away because he was so much skared of the animals.
+> Yesturday, when I and my friends were walking to the shoping center, we had seen a very big dog who barked lordly to us. My friend Jon, which is normally very bravest, comed to run away because he was so much skared of the animals.
 
 **model only**
 
-> Today when my friends were walking to the shopping center,, we had seen a very big dog who barked kindly to us. My friend Jon, which is usually very bravest, came to run away because he was so much sacked of the animals.
+> Today, when I and my friends were walking to the shoping center, we had seen a very big dog who barked lordly to us. My friend Jon, which is normally very bravest, came to run away because he was so much skared of the animals.
 
 **spell + model (no safety)**
 
-> Yesterday, when I and my friends went to the shopping center,, we saw a very big dog who barked kindly to us. My friend Jon, which is normal very bravest, comes to run away beaus he wears so much scared of the animes.
+> Yesterday, when I and my friends were walking to the shopping center, we had seen a very big dog who barked kindly to us. My friend Jon, which is normal very bravest, came to run away beauties he wears so much scared of the animes.
 
 **Gold**
 
@@ -146,19 +146,19 @@
 
 **pipeline (spell + model + safety)**
 
-> I don't know what to do about my homework. It is too hard for me.
+> I don't know what to do about my homework. Its too hard for me.
 
 **model + safety (no spell)**
 
-> I don't know what to do about my work. It is too hard for me.
+> I don't know what to do about my work. Its too hard for me.
 
 **model only**
 
-> I don't know what to do about my work. It is too hard for me.
+> I don't know what to do about my work. Its too hard for me.
 
 **spell + model (no safety)**
 
-> I don't know what to do about my homework. It is too hard for me.
+> I don't know what to do about my homework. Its too hard for me.
 
 **Gold**
 
@@ -172,19 +172,19 @@
 
 **pipeline (spell + model + safety)**
 
-> Last weak we good to the beech and slime all day. It was grate fun.
+> Last week we good to the beech and slime all day. It was grate fun.
 
 **model + safety (no spell)**
 
-> The last weak we went to the beech and swimed all day. It was grate fun.
+> Last week we goed to the beech and swimed all day. It was grate fun.
 
 **model only**
 
-> The last weak we went to the beech and swimed all day. It was grate fun.
+> Last week we went to the beech and swimed all day. It was grate fun.
 
 **spell + model (no safety)**
 
-> Last weak we good to the beech and slime all day. It was grate fun.
+> Last week we good to the beech and slime all day. It was grate fun.
 
 **Gold**
 
@@ -302,19 +302,19 @@
 
 **pipeline (spell + model + safety)**
 
-> If I would have known about the meeting,, I will come early.
+> If I had known about the meeting, I will come early.
 
 **model + safety (no spell)**
 
-> If I would have known about the meeting,, I will come again.
+> If I have known about the meeting, I will come again.
 
 **model only**
 
-> If I would have known about the meeting,, I will come again.
+> If I have known about the meeting, I will come again.
 
 **spell + model (no safety)**
 
-> If I would have known about the meeting,, I will come early.
+> If I had known about the meeting, I will come early.
 
 **Gold**
 
@@ -328,19 +328,19 @@
 
 **pipeline (spell + model + safety)**
 
-> The weather is really bad today, so we can't play outside.
+> The weather is really bad today, so we can not play outside.
 
 **model + safety (no spell)**
 
-> The weather is really bad today, so we can not play out.
+> The weather is really bad today, so we can not play outsid.
 
 **model only**
 
-> The weather is really bad today, so we can not play out.
+> The weather is really bad today, so we can not play outsid.
 
 **spell + model (no safety)**
 
-> The weather is really bad today, so we can't play outside.
+> The weather is really bad today, so we can not play outside.
 
 **Gold**
 
@@ -358,11 +358,11 @@
 
 **model + safety (no spell)**
 
-> He asked me to borrow him my bike, but I did not want to.
+> He asked me to borow him my bike, but I dident want to.
 
 **model only**
 
-> He asked me to borrow him my bike, but I did not want to.
+> He asked me to buy him my bike, but I did want to.
 
 **spell + model (no safety)**
 
@@ -406,19 +406,19 @@
 
 **pipeline (spell + model + safety)**
 
-> Can you give me advice about which laptop I should buy?
+> Can you give me a advice about which laptop I should to buy?
 
 **model + safety (no spell)**
 
-> Can you give me advice about which laptop I should buy?
+> Can you give me a advice about which laptop I should to buy?
 
 **model only**
 
-> Can you give me advice about which laptop I should buy?
+> Can you give me a advice about which laptop I should to buy?
 
 **spell + model (no safety)**
 
-> Can you give me advice about which laptop I should buy?
+> Can you give me a advice about which laptop I should to buy?
 
 **Gold**
 
@@ -436,11 +436,11 @@
 
 **model + safety (no spell)**
 
-> The teacher explained the lesson right, but some students still did not understand.
+> The teacher explained the lesson twise, but some students still dident understand.
 
 **model only**
 
-> The teacher explained the lesson right, but some students still did not understand.
+> The teacher explained the lesson differently, but some students still did understand.
 
 **spell + model (no safety)**
 
@@ -484,19 +484,19 @@
 
 **pipeline (spell + model + safety)**
 
-> I have lived in this city since five years, and I really like it.
+> I have lived in this city for five years, and I really like it.
 
 **model + safety (no spell)**
 
-> I have lived in this city since five years, and I really like it.
+> I have lived in this city for five years, and I really like it.
 
 **model only**
 
-> I have lived in this city since five years, and I really like it.
+> I have lived in this city for five years, and I really like it.
 
 **spell + model (no safety)**
 
-> I have lived in this city since five years, and I really like it.
+> I have lived in this city for five years, and I really like it.
 
 **Gold**
 
@@ -536,19 +536,19 @@
 
 **pipeline (spell + model + safety)**
 
-> She is more taller than her brother, but he is more stronger.
+> She is taller than her brother, but he is stronger.
 
 **model + safety (no spell)**
 
-> She is more taller than her brother, but he is more stronger.
+> She is taller than her brother, but he is stronger.
 
 **model only**
 
-> She is more taller than her brother, but he is more stronger.
+> She is taller than her brother, but he is stronger.
 
 **spell + model (no safety)**
 
-> She is more taller than her brother, but he is more stronger.
+> She is taller than her brother, but he is stronger.
 
 **Gold**
 
@@ -614,19 +614,19 @@
 
 **pipeline (spell + model + safety)**
 
-> I am agree with you, but I think we should wait until Monday.
+> I agree with you, but i think we should wait until Monday.
 
 **model + safety (no spell)**
 
-> I am agree with you, but I think we should wait until Monday.
+> I agree with you, but i think we should wait until Monday.
 
 **model only**
 
-> I am agree with you, but I think we should wait until Monday.
+> I agree with you, but i think we should wait until Monday.
 
 **spell + model (no safety)**
 
-> I am agree with you, but I think we should wait until Monday.
+> I agree with you, but i think we should wait until Monday.
 
 **Gold**
 
