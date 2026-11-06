@@ -30,7 +30,7 @@ The first 5 paragraphs were used while tuning, and 25 paragraphs is a small samp
 
 | Model | GLEU |
 |---|---|
-| No change (baseline) | see `python compare.py --fresh2` |
+| No change (baseline) | 0.620 |--fresh2` |
 | FLAN-T5-base, before the targeted grammar data | 0.794 |
 | **FLAN-T5-base + targeted grammar data** | **0.948** |
 
